@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScreneRight</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('error', (event) => {
+        document.body.innerHTML += `<div style="color:red; background:white; padding:20px; z-index:9999; position:absolute; top:0; left:0; right:0; bottom:0; overflow:auto;">
+          <h2>Global Error</h2>
+          <pre>${event.error?.stack || event.message}</pre>
+        </div>`;
+      });
+      window.addEventListener('unhandledrejection', (event) => {
+        document.body.innerHTML += `<div style="color:red; background:white; padding:20px; z-index:9999; position:absolute; top:0; left:0; right:0; bottom:0; overflow:auto;">
+          <h2>Unhandled Promise Rejection</h2>
+          <pre>${event.reason?.stack || event.reason}</pre>
+        </div>`;
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "name": "Screan",
+  "description": "A custom screenwriting web app tailored for complex narrative planning, including a beat board, visual timelines, and a Gemini-powered brainstorming co-writer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
